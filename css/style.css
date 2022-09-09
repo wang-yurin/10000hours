@@ -77,6 +77,19 @@ button {
   font-family: "GmarketSansBold";
 }
 
+/* Animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* design */
 /* header 영역 */
 .contents {
@@ -132,7 +145,7 @@ button {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  /* font-family: "GmarketSansMedium"; */
+  font-family: "GmarketSansMedium";
 }
 
 .intro-description strong {
@@ -148,6 +161,7 @@ button {
   gap: 27px;
   margin-bottom: 115px;
   font-size: 24px;
+  font-family: "GmarketSansMedium";
 }
 
 .input_container input {
@@ -197,16 +211,21 @@ button {
 /* 시계 로딩 부분 */
 .result_loding {
   display: none;
+  text-align: center;
 }
 
 .result_loding img {
+  animation: rotate 1s infinite linear;
   width: 100px;
 }
 
+/* 결과 부분 */
 .result {
   display: flex;
+  /* display: none; */
   flex-direction: column;
   align-items: center;
+  font-family: "GmarketSansMedium";
 }
 
 .result_container {
