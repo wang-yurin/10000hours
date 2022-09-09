@@ -46,55 +46,57 @@
 }
 
 /* layout */
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 .wrapper {
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* common */
-* {
-  font-family: "GmarketSansMedium";
-}
 body {
-  position: relative;
+  font-family: "GmarketSansMedium";
   color: #fff;
   background-color: #5b2386;
 }
-textarea {
-  color: #babcbe;
-}
-.text_bold {
+button {
+  padding: 21px 49px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #5b2386;
+  background-color: #fcee21;
+  border-radius: 56px;
+  border: none;
+  cursor: pointer;
   font-family: "GmarketSansBold";
-}
-.hidden {
-  visibility: hidden;
-}
-.none {
-  display: none;
 }
 
 /* design */
 /* header 영역 */
-.header-title {
+.contents {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  margin: 100px auto;
+  margin-top: 5%;
 }
 
-.clock-cover {
-  width: 261px;
-  height: 265px;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-cover_container {
   position: absolute;
+  width: 564px;
 }
 
 .logo-cover {
-  width: 564px;
+  width: 100%;
 }
 
 /* main 영역 */
@@ -117,11 +119,12 @@ textarea {
   color: #f5df4d;
   font-size: 36px;
   font-family: "OTEnjoystoriesBA";
+  text-align: center;
 }
 
 .intro-description {
   width: 493px;
-  margin-bottom: 102px;
+  margin-bottom: 100px;
   font-size: 18px;
   line-height: 1.7;
   text-align: center;
@@ -129,12 +132,15 @@ textarea {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  /* font-family: "GmarketSansMedium"; */
 }
 
-.intro-description .text_bold {
+.intro-description strong {
   font-size: 24px;
+  font-family: "GmarketSansBold";
 }
 
+/* 인풋 영역 */
 .input_container {
   display: flex;
   flex-direction: column;
@@ -145,30 +151,32 @@ textarea {
 }
 
 .input_container input {
-  padding: 10px 0;
+  padding: 0.7em;
+  margin: 0.3em;
   font-size: 24px;
   text-align: center;
   border-radius: 7px;
   border: none;
 }
 
-.button_container {
-  position: relative;
-  margin-bottom: 147px;
+.input_container input::placeholder {
+  color: #babcbe;
 }
 
-.start_button,
-.go_button,
-.share_button,
-.close_button {
-  padding: 21px 49px;
-  font-size: 24px;
-  font-weight: 700;
-  color: #5b2386;
-  background-color: #fcee21;
-  border-radius: 56px;
-  border: none;
-  cursor: pointer;
+.time_value_container {
+  display: flex;
+  align-items: center;
+}
+
+.field,
+.time {
+  display: flex;
+  align-items: center;
+}
+
+/* 버튼 부분 */
+.button_container {
+  position: relative;
 }
 
 .share_button {
@@ -180,25 +188,50 @@ textarea {
   top: 25px;
 }
 
-.result_container {
+.start {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 17px;
-  font-size: 24px;
-  margin-bottom: 127px;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+/* 시계 로딩 부분 */
+.result_loding {
+  display: none;
+}
+
+.result_loding img {
+  width: 100px;
 }
 
 .result {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+}
+
+.result_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 127px;
+}
+
+.result_container p {
+  display: flex;
+  align-items: center;
 }
 
 .field_result,
 .time_result {
+  padding: 10px 15px;
   font-size: 72px;
-  font-weight: 700;
+  font-family: "GmarketSansBold";
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
 }
 
 .go_button {
@@ -229,7 +262,7 @@ textarea {
   bottom: 0;
   z-index: 10;
 }
-.madal_container {
+.modal_container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,4 +290,312 @@ textarea {
 }
 #modal .button_container {
   margin: 0;
+}
+
+/* 미디어쿼리 */
+@media all and (min-width: 320px) and (max-width: 359px) {
+  .clock-cover {
+    width: 125px;
+  }
+  .logo-cover_container {
+    display: flex;
+    justify-content: center;
+  }
+  .logo-cover {
+    width: 267px;
+  }
+  .intro {
+    margin-top: 20px;
+  }
+  .intro .intro-subtitle {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  .intro .intro-description {
+    margin-bottom: 20px;
+    width: 270px;
+    font-size: 16px;
+    line-height: 1.2;
+    padding: 0 20px;
+    word-break: keep-all;
+  }
+  .intro .intro-description strong {
+    font-size: 18px;
+  }
+  .input_container {
+    font-size: 16px;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  .input_container input {
+    width: 90px;
+    font-size: 16px;
+  }
+  .time {
+    display: flex;
+    flex-direction: column;
+  }
+  .start {
+    margin-bottom: 30px;
+  }
+  .start_button {
+    width: 200px;
+    border-radius: 20px;
+  }
+  .click-cover {
+    width: 43px;
+  }
+  button {
+    padding: 15px;
+    font-size: 14px;
+  }
+  .result_loding img {
+    width: 40px;
+  }
+  .result_container {
+    margin-bottom: 20px;
+  }
+  .result_container p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .result_container p:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+  .result_container strong {
+    font-size: 30px;
+    padding: 10px;
+  }
+  .copyright {
+    padding: 0;
+  }
+  .copyright-description {
+    font-size: 14px;
+    padding: 0 30px;
+    word-break: keep-all;
+  }
+  #modal {
+    padding: 0 10px;
+  }
+  .modal_container {
+    width: 100%;
+    padding: 30px 15px;
+  }
+  #modal .modal-title {
+    font-size: 50px;
+  }
+  .modal-subtitle {
+    font-size: 25px;
+  }
+  .modal-cover {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .close_button {
+    font-size: 15px;
+  }
+}
+
+@media all and (min-width: 360px) and (max-width: 450px) {
+  .clock-cover {
+    width: 125px;
+  }
+  .logo-cover_container {
+    display: flex;
+    justify-content: center;
+  }
+  .intro {
+    margin-top: 30px;
+  }
+  .logo-cover {
+    width: 267px;
+  }
+  .intro .intro-subtitle {
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+  .intro .intro-description {
+    margin-bottom: 50px;
+    width: 300px;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 0 40px;
+    word-break: keep-all;
+  }
+  .intro .intro-description strong {
+    font-size: 20px;
+  }
+  .input_container {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  .input_container input {
+    width: 120px;
+    font-size: 16px;
+  }
+  .time {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .start {
+    margin-bottom: 50px;
+  }
+  .start_button {
+    width: 270px;
+    border-radius: 20px;
+  }
+  .click-cover {
+    width: 50px;
+    top: 35px;
+  }
+  button {
+    padding: 15px;
+    font-size: 20px;
+  }
+  .result_loding img {
+    width: 40px;
+  }
+  .result_container {
+    margin-bottom: 50px;
+  }
+  .result_container p {
+    font-size: 18px;
+  }
+  .result_container strong {
+    font-size: 30px;
+    padding: 10px;
+  }
+  .copyright {
+    padding: 0;
+    margin-top: 50px;
+  }
+  .copyright-description {
+    font-size: 14px;
+    padding: 0 30px;
+    word-break: keep-all;
+  }
+  #modal {
+    padding: 0 10px;
+  }
+  .modal_container {
+    width: 100%;
+    padding: 30px 15px;
+  }
+  #modal .modal-title {
+    font-size: 50px;
+  }
+  .modal-subtitle {
+    font-size: 25px;
+  }
+  .modal-cover {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .close_button {
+    font-size: 15px;
+  }
+}
+
+@media all and (min-width: 451px) and (max-width: 770px) {
+  .clock-cover {
+    width: 180px;
+  }
+  .logo-cover_container {
+    display: flex;
+    justify-content: center;
+  }
+  .intro {
+    margin-top: 30px;
+  }
+  .logo-cover {
+    width: 430px;
+  }
+  .intro .intro-subtitle {
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+  .intro .intro-description {
+    margin-bottom: 80px;
+    font-size: 20px;
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+  .intro .intro-description strong {
+    font-size: 25px;
+  }
+  .input_container {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+  .input_container input {
+    font-size: 20px;
+  }
+  .time {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .start {
+    margin-bottom: 50px;
+  }
+  .start_button {
+    width: 340px;
+    padding: 15px 50px;
+    border-radius: 20px;
+  }
+  .click-cover {
+    width: 50px;
+    top: 35px;
+  }
+  button {
+    padding: 15px 40px;
+    font-size: 18px;
+  }
+  .go_button {
+    margin-right: 5px;
+  }
+  .result_loding img {
+    width: 40px;
+  }
+  .result_container {
+    margin-bottom: 50px;
+  }
+  .result_container p {
+    font-size: 18px;
+  }
+  .result_container strong {
+    font-size: 45px;
+    padding: 10px;
+  }
+  .copyright {
+    padding: 0;
+    margin-top: 60px;
+  }
+  .copyright-description {
+    font-size: 12px;
+    padding: 0 30px;
+    word-break: keep-all;
+  }
+  #modal {
+    padding: 0 30px;
+  }
+  .modal_container {
+    width: 100%;
+    padding: 30px;
+  }
+  #modal .modal-title {
+    font-size: 60px;
+  }
+  .modal-subtitle {
+    font-size: 30px;
+  }
+  .modal-cover {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .close_button {
+    font-size: 18px;
+  }
 }
