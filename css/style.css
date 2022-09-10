@@ -212,7 +212,8 @@ button {
 /* 시계 로딩 부분 */
 .result_loding {
   display: none;
-  text-align: center;
+  margin-bottom: 50px;
+  justify-content: center;
 }
 
 .result_loding img {
@@ -249,7 +250,7 @@ button {
 }
 
 .buttons {
-  display: flex;
+  display: none;
   justify-content: center;
 }
 
@@ -271,7 +272,7 @@ button {
 
 /* 모달 영역 */
 #modal {
-  display: flex;
+  display: none;
   position: fixed;
   justify-content: center;
   align-items: center;
@@ -279,7 +280,6 @@ button {
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 10;
 }
 .modal_container {
   display: flex;
@@ -470,8 +470,11 @@ button {
     top: 35px;
   }
   button {
-    padding: 15px;
-    font-size: 20px;
+    padding: 15px 25px;
+    font-size: 18px;
+  }
+  .go_button {
+    margin-right: 5px;
   }
   .result_loding img {
     width: 40px;
@@ -491,8 +494,8 @@ button {
     margin-top: 50px;
   }
   .copyright-description {
-    font-size: 14px;
-    padding: 0 30px;
+    font-size: 12px;
+    padding: 0px 20px 30px;
     word-break: keep-all;
   }
   #modal {
@@ -570,7 +573,7 @@ button {
   }
   button {
     padding: 15px 40px;
-    font-size: 18px;
+    font-size: 20px;
   }
   .go_button {
     margin-right: 5px;
@@ -594,7 +597,7 @@ button {
   }
   .copyright-description {
     font-size: 12px;
-    padding: 0 30px;
+    padding: 0 30px 30px;
     word-break: keep-all;
   }
   #modal {
