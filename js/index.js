@@ -21,11 +21,11 @@ function onClickStartBtn() {
     return (resultArea.style.display = "none");
   }
   resultArea.style.display = "none";
-  loding.style.display = "flex";
+  loding.style.display = "block";
 
   setTimeout(() => {
     loding.style.display = "none";
-    resultArea.style.display = "flex";
+    resultArea.style.display = "block";
     buttonsEl.style.display = "flex";
     fieldResultEl.innerHTML = fieldInputEl.value;
     timeResultEl.innerHTML = Math.floor(10000 / timeInputEl.value);
