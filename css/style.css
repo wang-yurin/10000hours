@@ -147,7 +147,6 @@ button {
 /* 인풋 영역 */
 .input_container {
   text-align: center;
-  gap: 27px;
   margin-bottom: 115px;
   font-size: 24px;
   font-family: "GmarketSansMedium";
@@ -234,7 +233,6 @@ button {
 
 .buttons {
   display: none;
-  /* text-align: center; */
   justify-content: center;
 }
 
@@ -388,7 +386,6 @@ button {
   }
   .copyright-description {
     font-size: 7px;
-    width: 274px;
     margin: 0 auto;
   }
   /* 시계 로딩 */
